@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SRS - Smart Rescue System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-card">
+
+        <div class="logo">SRS</div>
+
+        <h1>Smart Rescue System</h1>
+
+        <p>Predict. Prevent. Optimize.</p>
+
+        <input
+            type="text"
+            id="company"
+            placeholder="Company ID"
+            value="DEMO-COMPANY"
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            value="manager@srs.com"
+        >
+
+        <input
+            type="password"
+            placeholder="Password"
+            value="123456"
+        >
+
+        <select id="role">
+            <option value="Owner">Owner</option>
+            <option value="Manager" selected>Manager</option>
+            <option value="Staff">Staff</option>
+        </select>
+
+        <button onclick="login()">
+            Secure Login
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- APPLICATION -->
+
+<div id="app" class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <div>
+                <strong>SRS</strong>
+                <small>Smart Rescue</small>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <button onclick="openPage('dashboard')">
+                📊 Dashboard
+            </button>
+
+            <button onclick="openPage('inventory')">
+                📦 Inventory
+            </button>
+
+            <button onclick="openPage('scanner')">
+                📱 QR Scanner
+            </button>
+
+            <button onclick="openPage('risk')">
+                🚨 Risk Center
+            </button>
+
+            <button onclick="openPage('recommendations')">
+                🤖 AI Recommendations
+            </button>
+
+            <button onclick="openPage('warehouses')">
+                🏢 Warehouses
+            </button>
+
+            <button onclick="openPage('notifications')">
+                🔔 Notifications
+            </button>
+
+            <button onclick="openPage('audit')">
+                🧾 Audit Trail
+            </button>
+
+            <button onclick="openPage('simulator')">
+                🧪 What-If Simulator
+            </button>
+
+            <button onclick="openPage('assistant')">
+                🎙️ AI Assistant
+            </button>
+
+        </nav>
+
+
+        <button class="logout" onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header>
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Inventory Intelligence Center
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="notification">
+                    🔔
+                    <span>4</span>
+                </div>
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                    <div>
+                        <strong id="userRole">
+                            Manager
+                        </strong>
+
+                        <small>
+                            SRS Company
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="page active">
+
+            <div class="welcome">
+
+                <div>
+
+                    <h2>
+                        Good morning 👋
+                    </h2>
+
+                    <p>
+                        Here's what's happening with your inventory today.
+                    </p>
+
+                </div>
+
+                <div class="health">
+                    <span>Inventory Health</span>
+                    <strong>82%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <span>💰</span>
+                    <p>Total Inventory Value</p>
+                    <h2>₹24.8L</h2>
+                </div>
+
+                <div class="stat-card danger">
+                    <span>🚨</span>
+                    <p>Stockout Risk Items</p>
+                    <h2>7</h2>
+                </div>
+
+                <div class="stat-card warning">
+                    <span>📦</span>
+                    <p>Overstock Items</p>
+                    <h2>12</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>💸</span>
+                    <p>Revenue at Risk</p>
+                    <h2>₹42,000</h2>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            🚨 Critical Actions Today
+                        </h3>
+
+                        <button>
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="critical-item">
+
+                        <div class="risk-icon red">
+                            !
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Premium Rice 5kg
+                            </strong>
+
+                            <p>
+                                Stockout probability 91%
+                            </p>
+
+                        </div>
+
+                        <span class="badge critical">
+                            CRITICAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="critical-item">
+
+                        <div class="risk-icon orange">
+                            !
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Cooking Oil 1L
+                            </strong>
+
+                            <p>
+                                Excess inventory ₹85,000
+                            </p>
+
+                        </div>
+
+                        <span class="badge high">
+                            HIGH
+                        </span>
+
+                    </div>
+
+
+                    <div class="critical-item">
+
+                        <div class="risk-icon yellow">
+                            !
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Premium Mixer
+                            </strong>
+
+                            <p>
+                                Dead stock ₹32,000
+                            </p>
+
+                        </div>
+
+                        <span class="badge medium">
+                            MEDIUM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            🤖 AI Recommendation
+                        </h3>
+
+                    </div>
+
+                    <div class="ai-card">
+
+                        <div class="ai-title">
+                            <span>✨</span>
+                            SRS Intelligence
+                        </div>
+
+                        <h3>
+                            Premium Rice 5kg
+                        </h3>
+
+                        <p>
+                            Expected stockout in
+                            <strong>4 days</strong>.
+                        </p>
+
+                        <div class="recommend">
+
+                            <strong>
+                                Recommended Action
+                            </strong>
+
+                            <p>
+                                <strong>Restock 10 units immediately.</strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
